@@ -1,6 +1,6 @@
 TARGET = book
 DTARGET = book_debug
-OBJECTS = book.c saveload.o
+OBJECTS = book.o main.c saveload.o
 CFLAGS = -W -Wall
 CC = gcc
 
