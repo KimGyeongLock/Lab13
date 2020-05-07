@@ -1,5 +1,4 @@
 #include "book.h"
-#include "saveload.h"
 
 int main(void){
 	Book b[100];
@@ -35,7 +34,7 @@ int main(void){
                 }
                 else if (menu == 4){
                         int no, deleteok;
-                        no = selectBook(b, curcount);
+                        no = selectBookNum(b, curcount);
                         if(no==0){
                                 printf("취소되었습니다.");
                                 continue;
@@ -43,7 +42,7 @@ int main(void){
                         printf("정말 삭제하시겠습니까?(예:1)");
                         scanf("%d", &deleteok);
                         if(deleteok == 1){
-                                deleteSnack(&b[no-1]);
+                                deleteBook(&b[no-1]);
                                 count--;
                         }
                 }

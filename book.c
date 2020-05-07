@@ -1,6 +1,6 @@
 #include "book.h"
 
-void selectMenu(){
+int selectMenu(){
 	int menu;
 	printf("\n*** 도서관리 시스템 ***\n");
 	printf("1. 조회\n");
@@ -16,9 +16,9 @@ void selectMenu(){
 
 int addBook(Book *b){
 	printf("책의 제목은? ");
-	scanf("%[^/n]s", b->name);
+	scanf("%[^\n]s", b->name);
 	printf("책의 저자는? ");
-	scanf("%[^/n]s", b->author);
+	scanf("%[^\n]s", b->author);
 	printf("책의 가격은? ");
 	scanf("%d", &b->price);
 	printf("책의 별점? ");
@@ -33,9 +33,9 @@ void readBook(Book b){
 
 int updateBook(Book *b){
 	printf("새 책의 제목은? ");
-	scanf("%[^/n]s", b->name);
+	scanf("%[^\n]s", b->name);
 	printf("새 책의 저자는? ");
-	scanf("%[^/n]s", b->author);
+	scanf("%[^\n]s", b->author);
 	printf("새 책의 가격은? ");
 	scanf("%d", &b->price);
 	printf("새 책의 별점? ");
