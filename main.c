@@ -12,7 +12,8 @@ int main(void){
 		menu = selectMenu();
 		if (menu == 0) break;
 		if (menu == 1 || menu == 3 || menu == 4){
-			if(count == 0){
+			if(count == 0) {
+				printf("조회할 목록이 없습니다!\n");
 				continue;
 			}
 		}
@@ -39,7 +40,7 @@ int main(void){
                                 printf("취소되었습니다.");
                                 continue;
                         }
-                        printf("정말 삭제하시겠습니까?(예:1)");
+                        printf("이 책을 대출하시겠습니까?(예:1)");
                         scanf("%d", &deleteok);
                         if(deleteok == 1){
                                 deleteBook(&b[no-1]);

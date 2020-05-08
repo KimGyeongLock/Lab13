@@ -6,7 +6,7 @@ typedef struct {
 	char name[50];
 	char author[50];
 	int price;  
-	int checkedOut;
+	char checkedOut;
 	int star;
 }Book;
 
