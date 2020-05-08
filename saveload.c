@@ -4,8 +4,8 @@ void saveBookList(Book *b, int count){
 	FILE *fp;
 	fp = fopen("booklist.txt","wt");
 	for(int i=0; i<count; i++){
-		if(b[i].price != -1){
-			fprintf(fp,"%d %d %s %s", b[i].price, b[i].star, b[i].author, b[i].name);
+		if(b[i].checkedOut != 'X'){
+			fprintf(fp,"%d %d %s %s\n", b[i].price, b[i].star, b[i].author, b[i].name);
 		}
 	}
 	fclose(fp);
