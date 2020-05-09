@@ -23,4 +23,4 @@ void saveBookList(Book *b, int count);
 int loadBookList(Book *b); 
 
 int sortBook(Book *b, int count);
-void searchBookName(Book *s, int count); 
+void searchBookName(Book *b, int count); 
