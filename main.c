@@ -7,7 +7,7 @@ int main(void){
 
 	count = loadBookList(b);
 	curcount = count;
-
+	
 	while (1){
 		menu = selectMenu();
 		if (menu == 0) break;
@@ -49,12 +49,18 @@ int main(void){
                 }
 		else if (menu == 5){
 			if(count ==0){
-                                printf("데이터가 없습니다!\n");
+                                printf("데이터가 없습니다.\n");
 			}
 			else{
 				saveBookList(b, curcount);
 			}
 		}
+		else if(menu == 6){
+			if(count == 0)
+				printf("데이터가 없습니다.\n");
+			else
+				searchBookName(b, curcount);
+        	}
 	}
         printf("종료됨!\n");
         return 0;
