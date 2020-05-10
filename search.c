@@ -9,7 +9,7 @@ void searchBookName(Book *b, int count){
 		if(strstr(b[i].name, search)){
 			readBook(b[i]);
 			if(b[i].checkedOut == 'X'){
-				printf("*\'%s\'은(는) 대출중인 도서입니다*\n", b[i].name);
+				printf("\t*대출 중인 도서입니다*");
 			}
 			bcount++;
 		}
@@ -17,4 +17,5 @@ void searchBookName(Book *b, int count){
 	if(bcount == 0){
                 printf("=> 검색한 도서가 존재하지 않습니다");
 	} 
+	printf("\n");
 }
