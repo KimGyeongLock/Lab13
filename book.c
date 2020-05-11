@@ -53,14 +53,14 @@ int updateBook(Book *b){
 
 int deleteBook(Book *b){	
 	b->checkedOut = 'X';
-	printf("=> 대출 되었습니다.\n");
+	printf("\n=> 대출 되었습니다.\n");
 	printf("『%s』(%s)\n\t%d원\n\t★★★★★(%d)\n", b->name, b->author, b->price, b->star);
 	if(b->checkedOut == 'X') printf("\t대출 불가능(%c)\n",b->checkedOut);
 	return 1;
 }
 
 void listBook(Book *b, int count){
-	printf(" **현재 도서관의 책 목록입니다**\n");
+	printf("\n**현재 도서관의 책 목록입니다**\n");
 	for(int i = 0; i < count; i++){
 		if(b[i].checkedOut == 'X') continue;
 		printf("[%d] ", i+1);

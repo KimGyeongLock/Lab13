@@ -27,20 +27,24 @@ int main(void){
 		}
 		else if (menu == 3){
                 	int no = selectBookNum(b, curcount);
-			if(no==0){
+			if(no == 0){
 				printf("취소되었습니다.");
                                 continue;
                         }
+			if(b[no-1].checkedOut == 'X'){
+				printf("수정 할 수 없는 도서입니다.\n");
+				continue;
+			}
                         updateBook(&b[no-1]);
                 }
                 else if (menu == 4){
                         int no, deleteok;
                         no = selectBookNum(b, curcount);
                         if(no==0){
-                                printf("취소되었습니다.");
+                                printf("취소되었습니다.\n");
                                 continue;
                         }
-                        printf("이 책을 대출하시겠습니까?(예:1)");
+                        printf("이 책을 대출하시겠습니까?(예:1) ");
                         scanf("%d", &deleteok);
                         if(deleteok == 1){
                                 deleteBook(&b[no-1]);

@@ -9,7 +9,7 @@ void searchBookName(Book *b, int count){
 		if(strstr(b[i].name, search)){
 			readBook(b[i]);
 			if(b[i].checkedOut == 'X'){
-				printf("\t*대출 중인 도서입니다*");
+				printf("\t*대출 중인 도서입니다*\n");
 			}
 			bcount++;
 		}
