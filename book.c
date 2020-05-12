@@ -71,7 +71,11 @@ void listBook(Book *b, int count){
 int selectBookNum(Book *b, int count){
 	int no;
 	listBook(b, count);
-	printf("\n번호는 (취소 :0)? ");
-	scanf("%d", &no);
+	while(1){
+		printf("\n번호는 (취소 :0)? ");
+		scanf("%d", &no);
+		if(b[no-1].checkedOut == 'X') printf("이 책은 대출중입니다!\n");
+		else break;
+	}
 	return no;
 }

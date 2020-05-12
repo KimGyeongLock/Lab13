@@ -31,10 +31,6 @@ int main(void){
 				printf("취소되었습니다.");
                                 continue;
                         }
-			if(b[no-1].checkedOut == 'X'){
-				printf("수정 할 수 없는 도서입니다.\n");
-				continue;
-			}
                         updateBook(&b[no-1]);
                 }
                 else if (menu == 4){
