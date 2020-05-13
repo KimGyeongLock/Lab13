@@ -34,6 +34,7 @@ int addBook(Book *b){
 void readBook(Book b){
 	printf("『%s』(%s)\n\t%d원\n\t★★★★★(%d)\n", b.name, b.author, b.price, b.star);
 	if(b.checkedOut == 'O') printf("\t대출 가능(%c)\n",b.checkedOut);
+	else printf("\t대출 불가능(%c)\n",b.checkedOut);
 }
 
 int updateBook(Book *b){
@@ -62,10 +63,15 @@ int deleteBook(Book *b){
 void listBook(Book *b, int count){
 	printf("\n**현재 도서관의 책 목록입니다**\n");
 	for(int i = 0; i < count; i++){
-		if(b[i].checkedOut == 'X') continue;
 		printf("[%d] ", i+1);
 		readBook(b[i]);
 	}
+	char choose;
+	printf("\n대출 가능한 책만 보시겠습니까? (y/n) ");
+	getchar();
+	scanf("%c", &choose);
+	if(choose == 'y'|| choose == 'Y') sortBook(b,count);
+	
 }
 
 int selectBookNum(Book *b, int count){
@@ -78,4 +84,27 @@ int selectBookNum(Book *b, int count){
 		else break;
 	}
 	return no;
+}
+
+void sortBook(Book *b, int count){
+	Book temp;
+	for(int i = 0;i < count ;i++){
+		for(int j=i+1;j<count;j++){
+				if(strcmp(b[i].name, b[j].name)>0){
+				temp = b[i];
+				b[i] = b[j];
+				b[j] = temp;
+			}	
+		}
+	}
+	int c=0;
+	printf("\n");
+	for(int i=0;i<count;i++){
+		if(b[i].checkedOut == 'O'){
+			c++;
+			printf("[%d]『%s』(%s)\n\t%d원\n\t★★★★★(%d)\n",c, b[i].name, b[i].author, b[i].price, b[i].star);
+		}
+	}
+
+
 }
